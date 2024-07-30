@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{%load static%}
+
+
+{%block title%} All Songs {%endblock%}
+
+{%block heading%}All Songs {%endblock%}
+
+{%block body%} 
+<div class="profile-container">
+                    
+    <div class="grid-container" style="color:rgb(255, 255, 255); "> 
+        
+        {% for i in song %}
+        <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+            
+            <img class="card-img-top" src='/media/{{i.image}}' alt="Card image cap" style="margin-top:20px;height: 200px;width:200px;border-radius:20px">
+            <div class="card-body">
+              <h4 class="card-title">{{i.name}}</h4>
+              <p class="card-text">{{i.singer}}</p>
+              <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="/echo/songs/{{i.song_id}}" >Listen now</a>
+            </div><br>
+            
+            
+    </div>{% endfor %}
+    </div>
+</div>
+{%endblock%}

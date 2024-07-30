@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{%load static%}
+
+
+{%block title%} {{song.name}} {%endblock%}
+
+{%block heading%} {%endblock%}
+
+{%block body%} 
+<div class="profile-container">
+    <br>     
+    <div class="scards" style="border:2px solid white;border-radius:10px;text-align:center;margin-left:250px;width:400px"><br>
+        <img class="card-img-top" src="/media/{{song.image}}" style='border-radius:10px;height:200px;width:200px' alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">Song name: {{song.name}}</h3>
+          <a href="#" class="card-link">Artist: {{song.singer}}</a><br>
+          <a href="#" class="card-link">Tags: {{ song.tags}}</a><br><br>
+          <audio controls>
+            <source src='/media/{{song.song}}' type='audio/mp3'></audio><br>
+        </div>
+      </div>
+</div>
+{%endblock%}

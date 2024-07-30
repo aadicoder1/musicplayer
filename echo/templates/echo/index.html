@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/005/930/371/large_2x/nature-landscape-background-beautiful-view-of-the-morning-fog-filling-the-valleys-of-smooth-hills-mountain-range-layer-dark-blue-forest-sunrise-and-sunset-in-mountains-with-purple-sky-dramatic-free-photo.JPG');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        font-family: 'Playwrite HU', cursive;
+        padding-bottom: 20vh;
+        
+    }
+    
+    .container {
+        display: flex; 
+        height: 70px;
+    }
+    #box {
+        margin-left: 50px;
+        width: 90%; /* Each div takes half of the container's width */
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;}
+    
+    .header {
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        margin-left: 10px;
+        width: 50px;
+        height: 70px;
+    }
+    
+    #biggestdiv {
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: 50px auto;
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+        /* padding-bottom:20vh ; */
+        box-shadow:0px 0px 20px rgb(0, 0, 0) ;
+    }
+    
+    .languages {
+        display: flex;
+        gap: 20px;
+        border-radius: 20px;
+        margin-left: 10px;
+            
+    }
+    
+    .heading01 {
+        text-decoration: none;
+        font-size: 2vh;
+        color: white;
+    }
+    .heading01 :hover{
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.9);
+        font-size: 2vh;
+        color: white;
+    }
+    
+    
+    .user-options {
+        text-decoration: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .profile {
+        color: white;
+        font-size: 1.5vh;
+        box-shadow:0px 0px 3px white ;
+    }
+    
+    #bdiv {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    
+    .navbar {
+        color: white;
+        font-size: 1vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        width: 80px;;
+        box-sizing: border-box;
+        border-radius:15px;
+        padding-bottom: 33vh;
+        
+        
+    }
+    
+    .right_slider {
+        color:white;
+        flex:1;
+        display: fle;
+        width:100px;
+        justify-content: center;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius:15px;
+        text-align: center;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding-right: 1vh;
+    }
+    
+    #sel01 {
+        font-size:1.5vh;
+        padding: 5px;
+        border-radius: 5px;
+        width: 25vh;
+        margin-left: -29vh;
+        box-shadow:0px 0px 6px white ;    
+    }
+    
+    .main-content{
+        flex:5;
+        margin: 0 15px;
+        border-radius: 15px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        box-sizing: border-box;
+        
+    
+    }
+    
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+    }
+    .box {
+        border-radius:20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+    .box a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .scroll {
+        width: 150px;
+        padding: 20px; 
+        border-radius: 10px;
+        margin-top:10px
+    }
+    
+    .scrollable-section {
+        height: 500px; 
+        overflow-y: scroll; 
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color:rgba(255,255,255,0.1 );
+    }
+    
+    .scrollable-section a {
+        color:white;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+    
+    .sidescroll{
+        margin-top: 20px;
+        color:white;
+        height: 500px; 
+        overflow-y: scroll; 
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .slider img{
+        margin:10px 20px;
+        
+    
+    }
+    .card{
+        text-align:center
+    }
+
+</style>
+
+<body>
+    <div id="biggestdiv">
+        <div class="container">
+        <div  >
+            <div ><a href="/"><img src="https://i.pinimg.com/564x/db/58/9b/db589b14743b13b11b43c2fe2bc8ded1.jpg" height="60px" width="60px" style="border-radius: 50%" ></a></div>
+        </div>
+        
+        <div id="box" class="header">
+            
+            <div class="languages">
+                <a href="#discover" class="heading01">Discover</a>
+                <a href="#podcasts" class="heading01">Podcasts</a>
+                <a href="#pop" class="heading01">Pop</a>
+                <a href="#indie" class="heading01">Indie</a>
+                <a href="#party" class="heading01">Party</a>
+                <a href="#travel" class="heading01">Travel</a>
+            </div>
+            <div class="user-options">
+                <a href="#profile"><img src="https://i.pinimg.com/564x/25/1c/e1/251ce139d8c07cbcc9daeca832851719.jpg" height="40px" style="border-radius:50%;"  ></a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="bdiv">
+            <div class="navbar">  
+            <br>
+                <a href="/"><img src="https://i.pinimg.com/564x/74/86/44/748644f836b4eb2e0a8c54182a8d6a5c.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#search"><img src="https://i.pinimg.com/564x/e7/d4/50/e7d450d8c31ae10aa663d082fdbb3db9.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#favorite"><img src="https://i.pinimg.com/736x/0a/43/61/0a43610cb6605a7da6567ce6bc36484d.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="/echo/songs"><img src="https://i.pinimg.com/564x/52/67/d4/5267d4279700b5716652fbf756062e4e.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#trending"><img src="https://i.pinimg.com/564x/7c/0e/4e/7c0e4e447a43a52a3473690cac3e7a0b.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#playlists"><img src="https://i.pinimg.com/564x/da/9d/17/da9d174eaa1f4b5a974326e3db1da3e0.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+            </div>
+
+
+            <div class="main-content" style="text-align:left">
+                <div class="grid-container">
+                    <div class="box">
+                        <a href="#hindi">Hindi</a>
+                    </div>
+                    <div class="box"><a href="#telugu">Telugu</a>
+                    </div>
+                    <div class="box"><a href="#english">English</a>
+                    </div>
+                    <div class="box"><a href="#punjabi">Punjabi</a>
+                    </div>
+                    <div class="box"><a href="kpop">K-pop</a>
+                    </div>
+                    <div class="box">
+                        <a href="#tamil">Tamil</a>
+                    </div>
+                </div>
+
+                <div class="sidescroll">
+                    <h2>Made for you,</h2>
+
+                    <div class="slider-container">
+                        <div class="slider"><div class="grid-container">
+                            
+                            <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div></div>
+
+                        </div>
+                    </div>
+                    <h2>Recommended to you,</h2>
+
+                    <div class="slider-container">
+                        <div class="slider"><div class="grid-container">
+                            <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                              <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div></div>
+
+                            
+                            
+                        </div>
+                    </div>
+                    <h2>Fresh new music,</h2>
+
+                    <div class="slider-container">
+                        <div class="slider"><div class="grid-container">
+                            <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                            </div>
+                            
+                        </div>
+                    </div><h2>Featured charts,</h2>
+
+                    <div class="slider-container">
+                        <div class="slider"><div class="grid-container">
+                            <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div><div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+                                <img class="card-img-top" src="logo.png" alt="Card image cap" style="margin-top:20px;height: 150px;border-radius:20px">
+                                <div class="card-body">
+                                  <h4 class="card-title">Song name</h4>
+                                  <p class="card-text">Artists & tags</p>
+                                  <a style="margin-top:20px ;padding:2px;border-radius:10px;text-decoration:none; background: rgb(160, 113, 144)" href="#" class="btn btn-primary">Listen now</a>
+                                </div><br>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+
+
+            <div class="right_slider">
+                <h1>Top artists</h1>
+
+                <div class="scroll">
+                    <div class="scrollable-section">
+                        
+                        <a href="#"><img src="https://i.pinimg.com/564x/af/72/c0/af72c0daf5163d14ed28f485e1d8d660.jpg" height="100px" width="100px" style="border-radius: 50%;">
+                        <figcaption>Arijit Singh</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/71/45/18/714518fe11d5f58c49e4feeb180bbe55.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Yo yo Honey Singh</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/736x/76/e3/fb/76e3fb439543817a3540798de90317a9.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Sai Abhyankar</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/d4/0d/8b/d40d8b39223c8a1379d54bd939741344.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption></figcaption>Darshan Raval<br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/3e/9e/97/3e9e97687cfdb6199784ceaf3160d892.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Anirudh Ravichander</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/28/c1/0f/28c10fda9963a654ba6fcc5ecaf1fc24.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Shawn Mendes</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/19/3b/1a/193b1ad5862f837151d09b4a55a1c6a1.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Dua Lipa</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/46/16/63/4616630c23ba4ebd4095bef9009141b2.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Ariana Grande</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/11/b8/a9/11b8a91dd17e60b7f2cf1c975d514f8e.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Selena Gomez</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/d5/8c/c0/d58cc0bc1f3866703dbe03e8da6caa9f.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Billie Eilish</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/69/68/9d/69689da129e253f0ed0a2e81d8680958.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Shubh</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/b6/87/ea/b687eae6f0804442c6a6745499ffddeb.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Guru Randhava</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/ed/61/00/ed6100b1ca9e61e79c42c18dde6f0a2a.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Tailor shwift</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/2e/8f/60/2e8f6014b1646b62d467e407ef3f9c46.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Sidhu Moosewala</figcaption><br></a>
+                        <a href="#"><img src="https://i.pinimg.com/564x/0b/83/79/0b837956b6148edfaa4e9d28365c2701.jpg" height="100px" width="100px" style="border-radius: 50%;"><figcaption>Diljit</figcaption><br></a>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
