@@ -1,0 +1,88 @@
+{% extends "base.html"%}
+
+{%block title%} Search songs {%endblock%}
+
+{%block body%} 
+
+<style>   
+        .search{
+        margin-left: 100px;
+        margin-RIGHt: 100px;
+        margin-top: 30px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 40px;
+        padding: 10px;
+        }
+    
+        .search_input{
+        color: black;
+        border: 0;
+        outline: 0;
+        background: none;
+        width: 0;
+        margin-top:0px;
+        caret-color:transparent;
+        line-height: 40px;
+        transition: width 0.4s linear;
+        font-size:18px
+        }
+    
+        .search .search_input{
+        padding: 0 10px;
+        width: 550px;
+        caret-color:black;
+        transition: width 0.4s linear;
+        }
+    
+        .search_icon{
+        height: 40px;
+        width: 40px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color:white;
+        background-color:black;
+        
+        }
+        
+    a:link{
+        text-decoration:none;
+    }    
+</style>
+
+
+
+<div class="profile-container" >
+
+    <form class="d-flex" method="GET" action="/search">
+        
+        <div class="search">
+            <input class="search_input" type="text" name="query" placeholder="Search song name here...">
+            <button style="margin-top:-12px;background-color:white;border:0px" class="btn btn-outline-success" type="submit"><img src="https://i.pinimg.com/564x/79/ce/10/79ce10e4c34077215b988139aec41dbe.jpg" style=" height:30px" ></button>
+        </div>
+        
+    </form><br><br>
+                
+    
+
+    <div class="grid-container" style="color:rgb(255, 255, 255);"> 
+        
+        {% for i in song %}
+        <div class="card" style="width: 18rem; border-radius:20px ;border: 3px solid rgb(255, 255, 255,0.4);">
+            
+            <img class="card-img-top" src='{{i.image.url}}' alt="Card image cap" style="margin-top:20px;height: 200px;width:200px;border-radius:20px">
+            <div class="card-body">
+              <h4 class="card-title">{{i.name}}</h4>
+              <p class="card-text">{{i.singer}}</p>
+              <a href="songs/{{i.id}}" ><img src="https://i.pinimg.com/564x/0c/4a/60/0c4a604e156f13ad2527cd144458519f.jpg" style="height:60px;border-radius:50%;"></a>
+            </div><br>
+            
+            
+    </div>{% endfor %}
+    </div>
+</div>
+
+{%endblock%}

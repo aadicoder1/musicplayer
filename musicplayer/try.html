@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/005/930/371/large_2x/nature-landscape-background-beautiful-view-of-the-morning-fog-filling-the-valleys-of-smooth-hills-mountain-range-layer-dark-blue-forest-sunrise-and-sunset-in-mountains-with-purple-sky-dramatic-free-photo.JPG');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Playwrite HU', cursive;
+            padding-bottom: 20vh;
+            
+        }
+        
+        .container {
+            display: flex; 
+            height: 70px;
+        }
+        #box {
+            margin-left: 50px;
+            width: 90%; /* Each div takes half of the container's width */
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;}
+        
+        .header {
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin-left: 10px;
+            width: 100px;
+            height: 70px;
+        }
+        
+        #biggestdiv {
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 50px auto;
+            width: 90%;
+            padding: 20px;
+            border-radius: 15px;
+            /* padding-bottom:20vh ; */
+            box-shadow:0px 0px 20px rgb(0, 0, 0) ;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+                
+        }
+        
+        .heading01 {
+            text-decoration: none;
+            font-size: 3vh;
+            color: white;
+        }
+        .heading01 :hover{
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 2vh;
+            color: white;
+        }
+        
+        
+        .user-options {
+            text-decoration: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .profile {
+            color: white;
+            font-size: 1.5vh;
+            box-shadow:0px 0px 3px white ;
+        }
+        
+        #bdiv {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        .navbar {
+            color: white;
+            font-size: 1vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            width: 80px;;
+            box-sizing: border-box;
+            border-radius:15px;
+            padding-bottom: 33vh;
+            
+            
+        }
+        
+        
+        
+        
+        #sel01 {
+            font-size:1.5vh;
+            padding: 5px;
+            border-radius: 5px;
+            width: 25vh;
+            margin-left: -29vh;
+            box-shadow:0px 0px 6px white ;    
+        }
+        
+        .main-content{
+            flex:5;
+            margin: 0 15px;
+            border-radius: 15px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            
+        
+        }
+        
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px; 
+        }
+        .box {
+            border-radius:20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .box a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .scroll {
+            width: 150px;
+            padding: 20px; 
+            border-radius: 10px;
+            margin-top:10px
+        }
+        
+        .scrollable-section {
+            height: 500px; 
+            overflow-y: scroll; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color:rgba(255,255,255,0.1 );
+        }
+        
+        .scrollable-section a {
+            color:white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        
+        .sidescroll{
+            margin-top: 20px;
+            color:white;
+            height: 500px; 
+            overflow-y: scroll; 
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .slider img{
+            margin:5px 17px;
+            
+        
+        }
+
+        .profile-container {
+            text-align: center;
+            border:2px double white;
+            background-color: rgb(255, 255, 255,0.1);
+            
+            padding-bottom: 20vh;
+        }
+
+        .profile-picture-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture .user-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border:2px solid white;
+        }
+
+        .liked-songs, .playlist {
+            margin: 20px 0;
+            color: white;
+            font-size: 3vh;
+        }
+
+        .logout button {
+            padding: 8px 30px;
+            cursor: pointer;
+            background-color: white;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            font-size: 2vh;
+            border-radius: 30px 30px 30px;
+            border: 3px solid white;
+            
+        }
+        .upload-picture input{
+            margin-top: 5vh;
+            margin-left: 32vh;
+            width: 50vh;
+            height: 4vh;
+        }
+        #playlist,#liked-songs{
+            width:4vh;
+            height: 3vh;
+            text-align: center;
+            font-size: 3vh;
+            
+        }
+        #text01{
+            color: white;
+            font-size: 5vh;
+            margin-top: 1vh;
+
+        }
+    </style>
+    <title>Echo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="biggestdiv">
+        <div class="container">
+        <div  >
+                <div ><a href="#home.html"><img src="https://i.pinimg.com/564x/db/58/9b/db589b14743b13b11b43c2fe2bc8ded1.jpg" height="60px" width="60px" style="border-radius: 50%" ></a></div>
+        </div>
+        
+        <div id="box" class="header">
+            
+            <div class="languages">
+                <a href="#discover" class="heading01">Discover</a>
+                <a href="#podcasts" class="heading01">Podcasts</a>
+                <a href="#pop" class="heading01">Pop</a>
+                <a href="#indie" class="heading01">Indie</a>
+                <a href="#party" class="heading01">Party</a>
+                <a href="#travel" class="heading01">Travel</a>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+        <div id="bdiv">
+            <div class="navbar">
+                
+            <br>
+                <a href="#home"><img src="https://i.pinimg.com/564x/74/86/44/748644f836b4eb2e0a8c54182a8d6a5c.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#search"><img src="https://i.pinimg.com/564x/e7/d4/50/e7d450d8c31ae10aa663d082fdbb3db9.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#favorite"><img src="https://i.pinimg.com/736x/0a/43/61/0a43610cb6605a7da6567ce6bc36484d.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+                <a href="#trending"><img src="https://i.pinimg.com/564x/7c/0e/4e/7c0e4e447a43a52a3473690cac3e7a0b.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+            <a href="#playlists"><img src="https://i.pinimg.com/564x/da/9d/17/da9d174eaa1f4b5a974326e3db1da3e0.jpg" height="50px" style="border-radius:50%;"  ></a><br>
+            </div>
+        
+            <div class="main-content">
+                <div class="profile-container">
+                    <h1 id="text01"><u>My Profile</u></h1>
+                    <div class="profile-picture-section">
+                        <div class="profile-picture">
+                            <img src="{% static '' %}"  class="user-pic">
+                        </div>
+                        <div class="upload-picture">
+                           
+                            <input type="file" id="choose-image" name="profile_image">
+                        </div>
+                    </div>
+                    
+                    <div class="liked-songs">
+                        <form>
+                            <label for="liked-songs">My Liked Songs:</label><br>
+                            <input type="number" id="liked-songs" name="liked_songs" value="0" readonly>
+                        </form>
+                        
+                    </div>
+                    <div class="playlist">
+                        <form>
+                            <label for="playlist">My Playlist:</label><br>
+                            <input type="number" id="playlist" name="playlist" value="0" readonly>
+                        </form>
+                        
+                    </div>
+                    <div class="logout">
+                        <button type="button">Log Out</button>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('choose-image').addEventListener('change', function(event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                document.querySelector('.user-pic').src = e.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                </script>
+            </div></div>
+</body>
+</html>
