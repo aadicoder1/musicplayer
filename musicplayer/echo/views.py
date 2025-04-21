@@ -6,7 +6,7 @@ from echo.models import Song,Profile
 
 def index(request):
     user = request.user    
-    print(user.first_name)
+    #print(user.first_name)
     song=Song.objects.all()
     return render(request,'index.html',{'song':song , "user":user} )
 
